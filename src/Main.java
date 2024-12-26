@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -9,7 +7,7 @@ public class Main {
         // Бухгалтеры попросили посчитать сумму всех выплат за месяц.
         // Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
         // Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате: «Сумма трат за месяц составила … рублей».
-        int[] rack = {26000, 35000, 42000, 18000};
+        int[] rack = {26000, 35000, 42000, 18000, 21000};
         int sum = 0;
         for (int element : rack) {
             sum += element;
@@ -42,8 +40,15 @@ public class Main {
         // Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
         // Напишите программу, которая посчитает среднее значение трат за месяц (то есть сумму всех трат за месяц поделить на количество недель), и выведите в консоль результат в формате: «Средняя сумма трат за месяц составила … рублей».
         // Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым, а дробным числом.
-        int sumАver = sum / 4;
-        System.out.println("Средняя сумма трат за месяц составила " + sumАver + " рублей");
+        int average = 0;
+        if (rack.length > 0) {
+            sum = 0;
+            for (int i = 0; i < rack.length; i++) {
+                sum += rack[i];
+            }
+            average = sum / rack.length;
+        }
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
         System.out.println();
 
         System.out.println("Задача 4");
@@ -55,12 +60,14 @@ public class Main {
         //Arrays.sort(reverseFullName);
         //System.out.println(Arrays.Collections.reverseOrder(reverseFullName));
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char[] fullName = new char[reverseFullName.length];
-        for (int i = 0; i < reverseFullName.length; i++) {
-            fullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+        int b = reverseFullName.length;
+        for (int i = 0; i < b / 2; i++) {
+            char ch = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[b - 1 - i];
+            reverseFullName[b - 1 - i] = ch;
         }
-        System.out.println(fullName);
-
-
+        System.out.println(reverseFullName);
     }
+
+
 }

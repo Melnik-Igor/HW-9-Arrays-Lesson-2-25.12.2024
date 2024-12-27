@@ -42,11 +42,10 @@ public class Main {
         // Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым, а дробным числом.
         int average = 0;
         if (rack.length > 0) {
-            sum = 0;
             for (int i = 0; i < rack.length; i++) {
-                sum += rack[i];
+                average += rack[i];
             }
-            average = sum / rack.length;
+            average = average / rack.length;
         }
         System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
         System.out.println();
@@ -60,13 +59,9 @@ public class Main {
         //Arrays.sort(reverseFullName);
         //System.out.println(Arrays.Collections.reverseOrder(reverseFullName));
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        int b = reverseFullName.length;
-        for (int i = 0; i < b / 2; i++) {
-            char ch = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[b - 1 - i];
-            reverseFullName[b - 1 - i] = ch;
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.printf("%s", reverseFullName[i]);
         }
-        System.out.println(reverseFullName);
     }
 
 

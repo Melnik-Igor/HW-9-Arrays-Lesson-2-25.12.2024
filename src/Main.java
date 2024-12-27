@@ -25,7 +25,7 @@ public class Main {
                 maxRack = j;
             }
         }
-        System.out.println("Максимальная сумма трат за неделю составила " + maxRack + " рубля");
+        System.out.println("Максимальная сумма трат за неделю составила " + maxRack + " рублей");
         int minRack = 100000;
         for (int j : rack) {
             if (j < minRack) {
